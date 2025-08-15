@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth type & classy defaults */
+html { scroll-behavior: smooth; }
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
+.container {
+  @apply max-w-7xl mx-auto px-4;
+}
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl px-5 py-3 font-medium shadow-soft hover:shadow transition;
+}
+.btn-primary {
+  @apply bg-brand-600 text-white hover:bg-brand-700;
+}
+.btn-ghost {
+  @apply bg-white text-brand-700 ring-1 ring-slate-200 hover:bg-slate-50;
+}
+.card {
+  @apply rounded-2xl border border-slate-200 shadow-soft bg-white;
+}
+kbd {
+  @apply px-2 py-1 text-xs font-medium bg-slate-100 border border-slate-300 rounded-md;
+}
