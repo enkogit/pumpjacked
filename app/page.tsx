@@ -82,12 +82,13 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container py-12 md:py-20">
+      <section id="how-it-works" className="container py-12 md:py-20 scroll-mt-24 prose prose-slate max-w-none">
+      <h1>How Pumpjacked works</h1>
         <div className="grid md:grid-cols-3 gap-6">
           {[
-            { title: "Card analytics", desc: "Surface & downhole cards with auto-labeling and exception highlighting (gas interference, fluid pound, sticking, wear)." },
-            { title: "Optimization insights", desc: "Setpoint suggestions, speed/torque balancing, gas anchor checks—ranked by impact." },
-            { title: "Playbook to action", desc: "Clear next steps for operators + tracking to verify uplift after changes." }
+            { title: "Ingest", desc: "Upload CSV, LAS, or vendor exports; or stream via API, Auto-normalization by well, unit, and sampling cadence, Edge-compatible agent for low-connectivity fields." },
+            { title: "Analyze", desc: "Auto-labeling: fillage, pump intake pressure, gas interference, fluid pound, sticking, wear, Change logs &amp; verification windows to measure uplift, Setpoint suggestions with projected production &amp; energy impact." },
+            { title: "Act", desc: "Clear playbook steps tailored per well, Change logs &amp; verification windows to measure uplift, Notifications to email/SMS/Slack when action is due." }
           ].map((f) => (
             <div key={f.title} className="card p-6">
               <p className="font-semibold text-lg">{f.title}</p>
@@ -95,8 +96,9 @@ export default function Page() {
             </div>
           ))}
         </div>
+        <h3>Security &amp; privacy</h3>
+        <p>All data encrypted in transit and at rest. Fine-grained access control by asset, role, and region. SOC2-ready architecture.</p>
       </section>
-
       <section id="demo" className="container py-16 md:py-24">
         <div className="card p-8 md:p-12 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold">Ready to see your wells differently?</h2>
@@ -107,36 +109,6 @@ export default function Page() {
           <p className="text-xs text-slate-500 mt-3">No credit card. No install.</p>
         </div>
       </section>
-      {/* HOW IT WORKS */}
-      <section id="how-it-works" className="container py-16 md:py-24 scroll-mt-24 prose prose-slate max-w-none">
-        <h1>How Pumpjacked works</h1>
-        <p className="lead">From raw cards to field-ready actions in three steps.</p>
-
-        <h2>1) Ingest</h2>
-        <ul>
-          <li>Upload CSV, LAS, or vendor exports; or stream via API.</li>
-          <li>Auto-normalization by well, unit, and sampling cadence.</li>
-          <li>Edge-compatible agent for low-connectivity fields.</li>
-        </ul>
-
-        <h2>2) Analyze</h2>
-        <ul>
-          <li>Auto-labeling: fillage, pump intake pressure, gas interference, fluid pound, sticking, wear.</li>
-          <li>Trend detection &amp; exception ranking with confidence bands.</li>
-          <li>Setpoint suggestions with projected production &amp; energy impact.</li>
-        </ul>
-
-        <h2>3) Act</h2>
-        <ul>
-          <li>Clear playbook steps tailored per well.</li>
-          <li>Change logs &amp; verification windows to measure uplift.</li>
-          <li>Notifications to email/SMS/Slack when action is due.</li>
-        </ul>
-
-        <h3>Security &amp; privacy</h3>
-        <p>All data encrypted in transit and at rest. Fine-grained access control by asset, role, and region. SOC2-ready architecture.</p>
-      </section>
-
       {/* PRICING */}
       <section id="pricing" className="container py-16 md:py-24 scroll-mt-24">
         <h1 className="text-4xl font-semibold text-center">Pricing</h1>
