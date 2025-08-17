@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Pumpjack optimization platform",
@@ -8,10 +9,23 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <section className="container py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="relative isolate py-16 md:py-24">
+        {/* Full-width background image */}
+        <Image
+          src="/img/landing.jpg"   // place the file at public/img/landing.jpg
+          alt=""                   // decorative background
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 -z-20 object-cover"
+        />
+        {/* Light overlay so dark text stays readable */}
+        <div className="absolute inset-0 -z-10 bg-white/70 backdrop-blur-[1px]" />
+
+        {/* Content stays centered within container */}
+        <div className="container grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
+            <h1 className="text-4xl md:text-4xl font-semibold leading-tight">
               Predictable production from every pumpjack
             </h1>
             <p className="text-lg text-slate-600 mt-6">
@@ -23,34 +37,44 @@ export default function Page() {
               <a href="#demo" className="btn btn-ghost">Book a demo</a>
             </div>
             <div className="mt-6 flex items-center gap-4 text-sm text-slate-600">
-              <span className="inline-flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-green-500" />Offline-friendly</span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-green-500" />
+                Offline-friendly
+              </span>
               <span>•</span>
               <span>API-ready</span>
               <span>•</span>
               <span>Field-proven heuristics + ML</span>
             </div>
           </div>
+
           <div className="relative">
             <div className="card p-6">
-              <div className="h-64 md:h-80 rounded-xl bg-gradient-to-br from-brand-100 to-white border border-slate-200 flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-sm text-slate-500">Dynamometer card</p>
-                  <p className="text-5xl font-semibold mt-2">▱▰▱</p>
-                  <p className="text-slate-500 mt-3">Live classification • Fillage • Pump intake pressure</p>
-                </div>
+              <div className="relative h-64 md:h-80 rounded-xl bg-gradient-to-br from-brand-100 to-white border border-slate-200 p-4 overflow-hidden">
+                {/* keep your pumpcard image */}
+                <Image
+                  src="/img/pumpcard_demo.png"
+                  alt="Dynamometer card example"
+                  fill
+                  className="object-contain"
+                  sizes="(min-width: 768px) 640px, 100vw"
+                  priority
+                />
               </div>
-              <div className="grid grid-cols-3 gap-4 mt-6 text-sm">
+
+              {/* your three benefit tiles */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 text-sm">
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <p className="font-semibold">+4–8%</p>
-                  <p className="text-slate-600">Avg. uplift from setpoint tuning</p>
+                  <p className="font-semibold">Near real-time</p>
+                  <p className="text-slate-600">Automated card analysis &amp; alerts when behavior deviates.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <p className="font-semibold">-18%</p>
-                  <p className="text-slate-600">Power per barrel</p>
+                  <p className="font-semibold">90-day+ trends</p>
+                  <p className="text-slate-600">Rolling performance history to spot drift, gas interference &amp; wear early.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <p className="font-semibold">2x</p>
-                  <p className="text-slate-600">Faster failure detection</p>
+                  <p className="font-semibold">Up to 12× faster</p>
+                  <p className="text-slate-600">Failure detection vs. 1-card-per-day reviews.</p>
                 </div>
               </div>
             </div>
