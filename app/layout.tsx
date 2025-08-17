@@ -41,8 +41,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <img src="/logo.svg" alt="Pumpjacked" className="h-8 w-auto" />
             </a>
             <nav className="hidden md:flex gap-6 text-sm">
-              <a href="/how-it-works" className="hover:text-brand-700">How it works</a>
-              <a href="/pricing" className="hover:text-brand-700">Pricing</a>
+              <a href="/#how-it-works" className="hover:text-brand-700">How it works</a>
+              <a href="/#pricing" className="hover:text-brand-700">Pricing</a>
               <a href="/faq" className="hover:text-brand-700">FAQ</a>
             </nav>
             <div className="flex gap-3">
